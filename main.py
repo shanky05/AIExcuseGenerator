@@ -25,7 +25,7 @@ load_dotenv()
 
 origins = [
     "http://localhost:3000",               # for React dev mode
-    "https://excuse-frontend.vercel.app/" # change this after deploying frontend
+    "https://excuse-frontend.vercel.app" # change this after deploying frontend
 ]
 
 
