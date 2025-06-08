@@ -16,8 +16,9 @@ client = OpenAI(api_key=api_key)
 
 def generate_document_from_excuse(context: str, persona: str, excuse_text: str, filename="proofs/medical_note.pdf"):
     system_prompt = (
-        "You are a professional doctor. Based on the user's excuse below, "
-        "generate a formal, realistic medical certificate.\n\n"
+        "You are an ai excuse generator tool. Based on the user's excuse below, "
+        "generate a formal, realistic document that supports the excuse. You have make sure that the document "
+        " adheres to the context and persona\n\n"
        f"Excuse: {excuse_text}\n\n"
         f"Context: {context}\n"
         f"Persona: {persona}"

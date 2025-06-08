@@ -54,7 +54,10 @@ async def generate_excuse_with_proof(req: ExcuseRequest):
         persona=req.persona,excuse_text=excuse, filename=file_path)
 
     # Step 3: Return both excuse and file URL
+    base_url = str(req.base_url).rstrip("/")
+    pdf_url = f"{base_url}/proofs/{filename}"
+
     return JSONResponse(content={
         "excuse": excuse,
-        "pdf_url": f"http://localhost:8000/proofs/{filename}"
+        "pdf_url": pdf_url
     })
