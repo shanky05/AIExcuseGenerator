@@ -23,10 +23,16 @@ app.include_router(router)
 from dotenv import load_dotenv
 load_dotenv()
 
+origins = [
+    "http://localhost:3000",               # for React dev mode
+    "https://excuse-frontend.vercel.app/" # change this after deploying frontend
+]
+
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_origins=origins,                # allow specific origins
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
